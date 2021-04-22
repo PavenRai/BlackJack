@@ -12,7 +12,9 @@ package ca.sheridancollege.project;
 public abstract class Player 
 {
     private String playerID; //the unique ID for this player
-    
+    private int winCount = 0;//The win count
+    private int tieCount = 0;//The tie count
+    private int lossCount = 0;//The loss count
     /**
      * A constructor that allows you to set the player's unique ID
      * @param name the unique ID to assign to this player.
@@ -44,5 +46,26 @@ public abstract class Player
      * with your specific type of Player and filled in with logic to play your game.
      */
     public abstract void play();
+    //Methods to count Winn Tie and Losss for player 
+    public void addWin()
+    {
+        winCount++;
+    }
+
+    public void addTie()
+    {
+        tieCount++;
+    }
+
+    public void addLoss()
+    {
+        lossCount++;
+    }
+
+    //The result of the player 
+    public void printResult()
+    {
+        System.out.println ("Player " + (playerID) + ": " + winCount + " win(s), " + tieCount + " tie(s) and " + lossCount + " loss(es)");
+    }
     
 }
